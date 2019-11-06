@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int convertdecimalTobinary(int N);
+int main(int argc, char const *argv[])
+{
+	int sayi;
+	printf("Onluk bir sayı giriniz : ");
+	scanf("%d",&sayi);
+	printf("%d = ", sayi);
+	printf("%d", convertdecimalTobinary(sayi));
+	return 0;
+}
+int convertdecimalTobinary(int N)
+{
+	int i=0;
+	int j =0;
+	int islemSayisi[32];
+	do
+	{
+		islemSayisi[i] = N%2;
+		N = N/2;
+		i++;
+		
+	}
+	while(N!=0);
+	for (j=i-1; j>0; j--)
+		printf("%d",islemSayisi[j]);
+	
+return islemSayisi[j];
+}
